@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+           Declare uma função que não recebe argumento. Dentro dela, usando um loop for,
+           imprimacom  document.write()  a lista dos quilômetros em que havará estações
+           de embarque edesembarque, no sentido Franca – São Paulo, lembrando que o km 1
+           fica em São Paulo e okm 400, em Franca. Essa função não deverá ter valor de retorno.
+
+        */
+
+       
+         function loopPara() {  // Loop da função
+            for(let km = 400; km >= 1; km--) { // Números dos quilômetros para fazer a conta
+                if(km % 50 == 0) {  // Números dos quilômetros para fazer a conta
+                document.white(`Estações de desembarque e embarque no quilometro ${km} <br>`) // Aqui é onde fica documentado as estações de embarque 
+                   }
+               }
+            }
+        
+       /*
+       Obtenha do usuário um número de quilômetro. Valide a entrada do usuário, 
+       repetindo apergunta até que ele informe um número válido e que 
+       esteja entre 1 e 400 (inclusive)
+       */
+
+        let quilometro      // Criação da váriavel quilometro
+        do {
+            quilometro = parseInt(prompt('Informe um quilômetro entre 1 e 400:'))  // Aqui é onde o usúario informa o quilômetro
+        } while(isNaN(quilometro) || quilometro < 1 || quilometro > 400)  // Caso ele seja menor que 1 será NaN
+
+        /*
+            Utilizando a estrutura  switch, verifique se o quilômetro informado pelo usuário
+            possuia lguma das comodidades disponíveis ao longo da linha
+            e, se for o caso, exiba-a  usandoalert(). Se não houver nada no quilômetro, 
+            exiba'Nada aqui.'.
+        */
+        
+        let msg  // Criação da váriavel msg
+        switch(quilometro) {  
+            case 98:
+            case 190:
+            case 283:
+            case 379:
+                msg = 'Postos de conveniência da Rede Mil Grau'   // Caso o usúario digite: 98, 190, 283 e 379
+                break
+
+            case 155:
+            case 355:
+                msg = 'Postos da Polícia Ferroviária (sim, isso existe!)' // Caso o usúario digite: 155 e 355
+                break
+
+            case 137: 
+                msg = 'Aeroporto Interplanetário de Virapratos'  // Caso o usúario digite: 137
+                break
+            
+            case 204: 
+                msg = 'Hotel Cacique Internacional 6 estrelas'  // Caso o usúario digite: 204
+                break 
+            
+            case 311: 
+                msg = 'Boleli shopping center'  // Caso o usúario digite: 311
+                break
+
+            case 356: 
+                msg = 'Acesso ao Acqua Park Unidade III'  // Caso o usúario digite: 356
+                break
+
+            default:
+                msg = 'Nada aqui.'   // Caso o usúario digite algum número inválido ou não registrado
+        }
+        alert(msg)  // Mensagem relatando que o usúario digitou um número incorreto.
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
